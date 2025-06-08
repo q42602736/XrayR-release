@@ -113,22 +113,25 @@ install_XrayR() {
     cd /usr/local/XrayR/
 
     if [[ $arch == "64" ]]; then
-        download_link="${RAW_URL}/XrayR-linux-64"
+        download_link="${RAW_URL}/XrayR-linux-64.zip"
     elif [[ $arch == "arm64-v8a" ]]; then
-        download_link="${RAW_URL}/XrayR-linux-arm64"
+        download_link="${RAW_URL}/XrayR-linux-arm64-v8a.zip"
     elif [[ $arch == "s390x" ]]; then
-        download_link="${RAW_URL}/XrayR-linux-s390x"
+        download_link="${RAW_URL}/XrayR-linux-s390x.zip"
     else
         echo -e "${red}不支持的架构: ${arch}${plain}"
         exit 1
     fi
 
     echo -e "${green}下载链接: ${download_link}${plain}"
-    wget -N --no-check-certificate -O /usr/local/XrayR/XrayR "${download_link}"
+    wget -N --no-check-certificate -O /usr/local/XrayR/XrayR-linux.zip "${download_link}"
     if [[ $? -ne 0 ]]; then
         echo -e "${red}下载 XrayR 失败，请确保你的服务器能够下载 Github 的文件${plain}"
         exit 1
     fi
+
+    unzip XrayR-linux.zip
+    rm XrayR-linux.zip -f
 
     chmod +x /usr/local/XrayR/XrayR
     mkdir /etc/XrayR/ -p
