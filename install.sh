@@ -8,10 +8,12 @@ plain='\033[0m'
 # 修改为您的GitHub用户名
 GITHUB_USER="q42602736"
 REPO_NAME="XrayR-release"
+VERSION="0.9.2"
 
 # 原官方仓库地址改为您的仓库
 GITHUB_URL="https://github.com/${GITHUB_USER}/${REPO_NAME}"
-RAW_URL="https://raw.githubusercontent.com/${GITHUB_USER}/${REPO_NAME}/master"
+RAW_URL="https://raw.githubusercontent.com/${GITHUB_USER}/${REPO_NAME}/main"
+RELEASE_URL="https://github.com/${GITHUB_USER}/${REPO_NAME}/releases/download/${VERSION}"
 
 cur_dir=$(pwd)
 
