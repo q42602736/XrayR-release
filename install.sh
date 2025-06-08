@@ -8,7 +8,7 @@ plain='\033[0m'
 # 修改为您的GitHub用户名
 GITHUB_USER="q42602736"
 REPO_NAME="XrayR-release"
-VERSION="0.9.2"
+VERSION="v0.9.2"
 
 # 原官方仓库地址改为您的仓库
 GITHUB_URL="https://github.com/${GITHUB_USER}/${REPO_NAME}"
@@ -115,11 +115,11 @@ install_XrayR() {
     cd /usr/local/XrayR/
 
     if [[ $arch == "64" ]]; then
-        download_link="${RAW_URL}/XrayR-linux-64.zip"
+        download_link="${RELEASE_URL}/XrayR-linux-64.zip"
     elif [[ $arch == "arm64-v8a" ]]; then
-        download_link="${RAW_URL}/XrayR-linux-arm64-v8a.zip"
+        download_link="${RELEASE_URL}/XrayR-linux-arm64-v8a.zip"
     elif [[ $arch == "s390x" ]]; then
-        download_link="${RAW_URL}/XrayR-linux-s390x.zip"
+        download_link="${RELEASE_URL}/XrayR-linux-s390x.zip"
     else
         echo -e "${red}不支持的架构: ${arch}${plain}"
         exit 1
